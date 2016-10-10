@@ -7,6 +7,8 @@ class Pedido {
     Cliente cliente
 
     static constraints = {
+        valorTotal min: new Double(0)
+        cliente nullable: false
     }
 
     static hasMany = [itens: ItemPedido]

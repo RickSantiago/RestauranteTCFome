@@ -13,7 +13,8 @@ class Produto {
     static belongsTo = [Cliente]
 
     static constraints = {
-
+        nome blank: false, nullable: false
+        preco min: new Double(0)
     }
 
     //mapeando e renomeando chave da tabela estoque e da tabela auxiliar preferencia_clientes

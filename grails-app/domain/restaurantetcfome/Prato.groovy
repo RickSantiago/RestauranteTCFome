@@ -1,10 +1,11 @@
 package restaurantetcfome
 
-class Prato {
+class Prato extends Produto {
 
     Integer quantidadePessoas
 
     static constraints = {
+        quantidadePessoas min: 1
     }
 }
 

@@ -3,6 +3,7 @@ package restaurantetcfome
 class Cliente {
 
     String nome
+    String cpf
     String email
     String senha
 
@@ -10,6 +11,15 @@ class Cliente {
     static hasMany = [pedido:Pedido, produtoPreferidos:Produto]
 
     static constraints = {
+        nome nullable: false, blank: false
+        email email: true, unique: true
+        senha size: 6..12
+
+        cpf validator: {
+            valor, objeto ->
+                (valor.size() == 11)
+
+        }
     }
 
     //mapeamento da tabela renomeando a table auxiliar
