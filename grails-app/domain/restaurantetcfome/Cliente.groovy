@@ -6,9 +6,15 @@ class Cliente {
     String email
     String senha
 
-    static hasMany = [pedido:Pedido]
+    //relacionamento de muitos para muitos
+    static hasMany = [pedido:Pedido, produtoPreferidos:Produto]
 
     static constraints = {
+    }
+
+    //mapeamento da tabela renomeando a table auxiliar
+    static mapping = {
+        produtoPreferidos joinTable: [name:"preferencias_clientes", key:"id_cliente", column: "id_produto"]
     }
 }
 

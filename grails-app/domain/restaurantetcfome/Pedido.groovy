@@ -9,6 +9,8 @@ class Pedido {
     static constraints = {
     }
 
+    static hasMany = [itens: ItemPedido]
+
     static mapping = {
         cliente column: "id_cliente"
     }
