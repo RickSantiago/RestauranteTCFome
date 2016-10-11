@@ -19,8 +19,10 @@ class Produto {
 
     //mapeando e renomeando chave da tabela estoque e da tabela auxiliar preferencia_clientes
     static mapping = {
+        tablePerHierarchy(false)
+        //definindo a discriminação da coluna de nome "classe" criada pelo hibernate
+        discriminator column: "tipo", value: "GERAL"
         estoque column: "id_estoque"
         clientes joinTable: [name:"preferencias_clientes", key:"id_produto", column: "id_cliente"]
-
     }
 }

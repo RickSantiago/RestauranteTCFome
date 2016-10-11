@@ -7,5 +7,10 @@ class Prato extends Produto {
     static constraints = {
         quantidadePessoas min: 1
     }
+
+    static mapping = {
+        discriminator value: "PRATO"
+
+    }
 }
 

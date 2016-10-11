@@ -9,4 +9,9 @@ class Bebida extends Produto {
         liquido min: new Double(0)
         unidade nullable: false, blank: false, inList: ["Litro(Lt)", "MiliLitro(Ml)"]
     }
+
+    static mapping = {
+        discriminator value: "BEBIDA"
+    }
+
 }
